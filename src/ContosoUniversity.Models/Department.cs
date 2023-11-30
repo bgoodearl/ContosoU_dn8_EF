@@ -1,4 +1,5 @@
 ﻿//using Ardalis.GuardClauses;
+using ContosoUniversity.Models.Lookups;
 using CU.SharedKernel.Base;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -45,6 +46,13 @@ namespace ContosoUniversity.Models
         public byte[] RowVersion { get; set; } = new byte[] { 0, 0, 0, 0 };
 
         public virtual Instructor? Administrator { get; set; }
+
+        private ICollection<DepartmentFacilityType>? _departmentFacilityTypes;
+        public virtual ICollection<DepartmentFacilityType> DepartmentFacilityTypes
+        {
+            get { return _departmentFacilityTypes ?? (_departmentFacilityTypes = new List<DepartmentFacilityType>()); }
+            protected set { _departmentFacilityTypes = value; }
+        }
 
     }
 }

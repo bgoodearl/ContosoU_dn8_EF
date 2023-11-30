@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ContosoUniversity.Models;
 using CU.Application.Data.Common.Interfaces;
-//using ContosoUniversity.Models.Lookups;
+using ContosoUniversity.Models.Lookups;
 
 namespace CU.Infrastructure.Persistence
 {
@@ -45,11 +45,11 @@ namespace CU.Infrastructure.Persistence
 
             #region Lookups
 
-            //LookupsWith2cKey = Set<LookupBaseWith2cKey>();
-            //LookupTypes = Set<LookupType>();
+            LookupsWith2cKey = Set<LookupBaseWith2cKey>();
+            LookupTypes = Set<LookupType>();
 
-            //CoursePresentationTypes = Set<CoursePresentationType>();
-            //DepartmentFacilityTypes = Set<DepartmentFacilityType>();
+            CoursePresentationTypes = Set<CoursePresentationType>();
+            DepartmentFacilityTypes = Set<DepartmentFacilityType>();
             //RandomLookupTypes = Set<RandomLookupType>();
 
             #endregion Lookups
@@ -82,11 +82,11 @@ namespace CU.Infrastructure.Persistence
 
         #region Lookups
 
-        //public DbSet<LookupBaseWith2cKey> LookupsWith2cKey { get; private set; }
-        //public DbSet<LookupType> LookupTypes { get; private set; }
+        public DbSet<LookupBaseWith2cKey> LookupsWith2cKey { get; private set; }
+        public DbSet<LookupType> LookupTypes { get; private set; }
 
-        //public DbSet<CoursePresentationType> CoursePresentationTypes { get; private set; }
-        //public DbSet<DepartmentFacilityType> DepartmentFacilityTypes { get; private set; }
+        public DbSet<CoursePresentationType> CoursePresentationTypes { get; private set; }
+        public DbSet<DepartmentFacilityType> DepartmentFacilityTypes { get; private set; }
         //public DbSet<RandomLookupType> RandomLookupTypes { get; private set; }
 
         #endregion Lookups
@@ -105,8 +105,8 @@ namespace CU.Infrastructure.Persistence
         {
             if ((await Students.CountAsync() == 0) || (await Instructors.CountAsync() == 0)
                         || (await Courses.CountAsync() == 0) || (await Enrollments.CountAsync() == 0)
-                        //|| (await LookupTypes.CountAsync() == 0)
-                        //|| (await CoursePresentationTypes.CountAsync() == 0)
+                        || (await LookupTypes.CountAsync() == 0)
+                        || (await CoursePresentationTypes.CountAsync() == 0)
                         //|| (await DepartmentFacilityTypes.CountAsync() == 0)
                         //|| (await RandomLookupTypes.CountAsync() == 0)
                         )

@@ -6,6 +6,12 @@
 		<th>Notes</th>
     </tr>
     <tr>
+        <td>11/30/2022</td><td>bg</td>
+        <td>
+            Added Lookups, CoursePresentationType, DepartmentFacilityType<br/>
+        </td>
+    </tr>
+    <tr>
         <td>11/29/2023</td><td>bg</td>
         <td>
             Removed use of Ardalis.GuardClauses<br/>

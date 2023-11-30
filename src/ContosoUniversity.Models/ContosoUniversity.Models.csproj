@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CU.Definitions\CU.Definitions.csproj" />
     <ProjectReference Include="..\CU.SharedKernel\CU.SharedKernel.csproj" />
   </ItemGroup>
 
