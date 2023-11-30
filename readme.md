@@ -41,9 +41,7 @@ to `...\src\tests\CU.ApplicationIntegrationTests` and modify connection string f
 
 ## Resource links
 
-[EF Core 6 Resources](./_docs/CC6_EFCore6Resources.md)<br/>
-[Other Resources](./_docs/CC6_Resources.md)<br/>
-[Tools](./_docs/CC6_Tools.md)<br/>
+--- needs to be updated
 
 ### Seeding Data
 
