@@ -6,6 +6,13 @@
 		<th>Notes</th>
     </tr>
     <tr>
+        <td>11/29/2023</td><td>bg</td>
+        <td>
+            Removed use of Ardalis.GuardClauses<br/>
+            Updated to .NET 8<br/>
+        </td>
+    </tr>
+    <tr>
         <td>3/2/2022</td><td>bg</td>
 		<td>
             Started with CU.SharedKernel<br/>

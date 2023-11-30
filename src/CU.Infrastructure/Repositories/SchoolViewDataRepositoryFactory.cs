@@ -1,4 +1,4 @@
-﻿using Ardalis.GuardClauses;
+﻿//using Ardalis.GuardClauses;
 using CU.Application.Common.Interfaces;
 using CU.Application.Shared.Interfaces;
 
@@ -8,7 +8,7 @@ namespace CU.Infrastructure.Repositories
     {
         public SchoolViewDataRepositoryFactory(ISchoolRepositoryFactory schoolRepositoryFactory)
         {
-            Guard.Against.Null(schoolRepositoryFactory, nameof(schoolRepositoryFactory));
+            //Guard.Against.Null(schoolRepositoryFactory, nameof(schoolRepositoryFactory));
             SchoolRepositoryFactory = schoolRepositoryFactory;
         }
 

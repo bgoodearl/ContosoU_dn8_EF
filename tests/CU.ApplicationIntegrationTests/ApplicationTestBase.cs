@@ -1,6 +1,6 @@
 ﻿using CU.Application.Data.Common.Interfaces;
 using FluentAssertions;
-using MediatR;
+//using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
@@ -31,25 +31,25 @@ namespace CU.ApplicationIntegrationTests
             }
         }
 
-        protected async Task<TResponse> SendAsync<TResponse>(IRequest<TResponse> request)
-        {
-            _testOutputHelper.Should().NotBeNull();
-            if (_testOutputHelper != null)
-            {
-                IServiceScopeFactory? scopeFactory = _fixture.GetService<IServiceScopeFactory>(_testOutputHelper);
-                scopeFactory.Should().NotBeNull();
+        //protected async Task<TResponse> SendAsync<TResponse>(IRequest<TResponse> request)
+        //{
+        //    _testOutputHelper.Should().NotBeNull();
+        //    if (_testOutputHelper != null)
+        //    {
+        //        IServiceScopeFactory? scopeFactory = _fixture.GetService<IServiceScopeFactory>(_testOutputHelper);
+        //        scopeFactory.Should().NotBeNull();
 
-                if (scopeFactory != null)
-                {
-                    using var scope = scopeFactory.CreateScope();
+        //        if (scopeFactory != null)
+        //        {
+        //            using var scope = scopeFactory.CreateScope();
 
-                    var mediator = scope.ServiceProvider.GetRequiredService<ISender>();
+        //            var mediator = scope.ServiceProvider.GetRequiredService<ISender>();
 
-                    return await mediator.Send(request);
-                }
-            }
-            throw new InvalidOperationException("Unexpected problem setting up for SendAsync");
-        }
+        //            return await mediator.Send(request);
+        //        }
+        //    }
+        //    throw new InvalidOperationException("Unexpected problem setting up for SendAsync");
+        //}
 
     }
 }

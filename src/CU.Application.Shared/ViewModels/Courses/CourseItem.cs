@@ -1,4 +1,4 @@
-﻿using Ardalis.GuardClauses;
+﻿//using Ardalis.GuardClauses;
 
 namespace CU.Application.Shared.ViewModels.Courses
 {
@@ -24,13 +24,13 @@ namespace CU.Application.Shared.ViewModels.Courses
 
         public void SetInstructors(List<IdItem> instructors)
         {
-            Guard.Against.Null(instructors, nameof(instructors));
+            //Guard.Against.Null(instructors, nameof(instructors));
             Instructors = instructors;
         }
 
         public void SetPresentationTypes(List<CodeItem> presentationTypes)
         {
-            Guard.Against.Null(presentationTypes, nameof(presentationTypes));
+            //Guard.Against.Null(presentationTypes, nameof(presentationTypes));
             PresentationTypes = presentationTypes;
         }
 

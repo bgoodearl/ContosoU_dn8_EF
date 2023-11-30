@@ -1,6 +1,6 @@
-# Contoso University EF Core 6
+# Contoso University EF Core 8
 
-ASP.NET 6 Entity Framework Core 6 - demo of EF Core 6
+ASP.NET 8 Entity Framework Core 8 - demo of EF Core 8
 
 The code for the starting point of this endeavour can be found
 [in GitHub here](https://github.com/bgoodearl/ContosoU_dn6_MVCB_Clean).

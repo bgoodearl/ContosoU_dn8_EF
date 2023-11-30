@@ -1,4 +1,4 @@
-﻿using Ardalis.GuardClauses;
+﻿//using Ardalis.GuardClauses;
 using CU.Application.Common.Interfaces;
 using CU.Application.Data.Common.Interfaces;
 using CU.Application.Shared.ViewModels;
@@ -17,7 +17,7 @@ namespace CU.Infrastructure.Repositories
 
         public SchoolRepository(ISchoolDbContext schoolDbContext)
         {
-            Guard.Against.Null(schoolDbContext, nameof(schoolDbContext));
+            //Guard.Against.Null(schoolDbContext, nameof(schoolDbContext));
             SchoolDbContext = schoolDbContext;
         }
 
@@ -25,7 +25,7 @@ namespace CU.Infrastructure.Repositories
 
         public async Task<CourseActionResult> AddNewCourseAsync(CourseEditDto course)
         {
-            Guard.Against.Null(course, nameof(course));
+            //Guard.Against.Null(course, nameof(course));
 
             CourseActionResult result = new CourseActionResult
             {
@@ -243,8 +243,8 @@ namespace CU.Infrastructure.Repositories
 
         public async Task<CourseActionResult> SaveCourseChangesAsync(CourseEditDto course)
         {
-            Guard.Against.Null(course, nameof(course));
-            Guard.Against.Zero(course.CourseID, nameof(course.CourseID));
+            //Guard.Against.Null(course, nameof(course));
+            //Guard.Against.Zero(course.CourseID, nameof(course.CourseID));
 
             CourseActionResult result = new CourseActionResult
             {

@@ -1,4 +1,4 @@
-﻿using Ardalis.GuardClauses;
+﻿//using Ardalis.GuardClauses;
 using ContosoUniversity.Models;
 //using ContosoUniversity.Models.Lookups;
 using CU.Application.Data.Common.Interfaces;
@@ -10,7 +10,7 @@ namespace CU.Infrastructure.Persistence
     {
         public static async Task<int> SeedDefaultDataAsync(ISchoolDbContext context)
         {
-            Guard.Against.Null(context, nameof(context));
+            //Guard.Against.Null(context, nameof(context));
 
             int saveCount = 0;
 

@@ -1,4 +1,4 @@
-﻿using Ardalis.GuardClauses;
+﻿//using Ardalis.GuardClauses;
 using CU.Application.Common.Interfaces;
 using CU.Application.Data.Common.Interfaces;
 using CU.Application.Shared.Interfaces;
@@ -14,8 +14,12 @@ namespace CU.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            string connStr = configuration["ConnectionStrings:SchoolDbContext"];
-            Guard.Against.NullOrWhiteSpace(connStr, "configuration[ConnectionStrings:SchoolDbContext]");
+            string? connStr = configuration["ConnectionStrings:SchoolDbContext"];
+            if (connStr == null)
+            {
+                throw new ArgumentNullException(nameof(connStr));
+            }
+            //Guard.Against.NullOrWhiteSpace(connStr, "configuration[ConnectionStrings:SchoolDbContext]");
 
             services.AddSingleton<ISchoolDbContextFactory>(sp => new CIP.SchoolDbContextFactory(connStr));
             services.AddScoped<ISchoolDbContext>(sp => sp.GetRequiredService<ISchoolDbContextFactory>().GetSchoolDbContext());
