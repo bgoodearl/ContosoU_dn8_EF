@@ -6,6 +6,12 @@
 		<th>Notes</th>
     </tr>
     <tr>
+        <td>12/7/2022</td><td>bg</td>
+        <td>
+            Added migration CU6_M04_AddLookups<br/>
+        </td>
+    </tr>
+    <tr>
         <td>11/30/2022</td><td>bg</td>
         <td>
             Added Lookups, CoursePresentationType, DepartmentFacilityType<br/>
