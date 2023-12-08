@@ -6,6 +6,13 @@
 		<th>Notes</th>
     </tr>
     <tr>
+        <td>12/8/2022</td><td>bg</td>
+        <td>
+            Added lookup OfficeBuilding<br/>
+            Added migration CU6_M05_AddLookups2<br/>
+        </td>
+    </tr>
+    <tr>
         <td>12/7/2022</td><td>bg</td>
         <td>
             Added migration CU6_M04_AddLookups<br/>

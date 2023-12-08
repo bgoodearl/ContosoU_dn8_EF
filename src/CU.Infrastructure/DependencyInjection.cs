@@ -14,7 +14,7 @@ namespace CU.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            string connStr = configuration["ConnectionStrings:SchoolDbContext"];
+            string? connStr = configuration["ConnectionStrings:SchoolDbContext"];
             Guard.Against.NullOrWhiteSpace(connStr, "configuration[ConnectionStrings:SchoolDbContext]");
 
             services.AddSingleton<ISchoolDbContextFactory>(sp => new CIP.SchoolDbContextFactory(connStr));

@@ -69,6 +69,14 @@ Script-Migration -Project CU.Infrastructure -StartupProject CU.EFDataApp -From C
 Script-Migration -Project CU.Infrastructure -StartupProject CU.EFDataApp -From CU6_M03_AddCourseInstructorLink -To CU6_M04_AddLookups -output .\SqlScripts\Schema\CU6_M04_AddLookups.sql
 ```
 
+#### CU6_M05_AddLookups2
+
+```powershell
+Add-Migration -Project CU.Infrastructure -StartupProject CU.EFDataApp CU6_M05_AddLookups2
+Script-Migration -Project CU.Infrastructure -StartupProject CU.EFDataApp -From CU6_M04_AddLookups -To CU6_M05_AddLookups2 -output .\SqlScripts\Schema\CU6_M05_AddLookups2_idempotent.sql -Idempotent
+Script-Migration -Project CU.Infrastructure -StartupProject CU.EFDataApp -From CU6_M04_AddLookups -To CU6_M05_AddLookups2 -output .\SqlScripts\Schema\CU6_M05_AddLookups2.sql
+```
+
 ### What's in Migrations
 
 Migration                       | Details
@@ -77,4 +85,5 @@ CU6_M01_ExistingSchemaBase_2022 | match for base of existing schema from prior i
 CU6_M02_AddEnrollment           | added Enrollment table with links to Course and Student
 CU6_M03_AddCourseInstructorLink | added many-to-many link between Course and Instructor
 CU6_M04_AddLookups              | added 2 lookup types with single table xLookups2cKey
+CU6_M05_AddLookups2             | added lookup OfficeBuilding
 
