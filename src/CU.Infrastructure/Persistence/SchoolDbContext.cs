@@ -33,12 +33,12 @@ namespace CU.Infrastructure.Persistence
         {
             #region Persistent Entities
 
-            Courses = Set<Course>();
-            Departments = Set<Department>();
-            Enrollments = Set<Enrollment>();
-            Instructors = Set<Instructor>();
-            OfficeAssignments = Set<OfficeAssignment>();
-            Students = Set<Student>();
+            if (Courses == null) Courses = Set<Course>();
+            if (Departments == null) Departments = Set<Department>();
+            if (Enrollments == null) Enrollments = Set<Enrollment>();
+            if (Instructors == null) Instructors = Set<Instructor>();
+            if (OfficeAssignments == null) OfficeAssignments = Set<OfficeAssignment>();
+            if (Students == null) Students = Set<Student>();
 
             #endregion Persistent Entities
 
@@ -48,8 +48,9 @@ namespace CU.Infrastructure.Persistence
             LookupsWith2cKey = Set<LookupBaseWith2cKey>();
             LookupTypes = Set<LookupType>();
 
-            CoursePresentationTypes = Set<CoursePresentationType>();
-            DepartmentFacilityTypes = Set<DepartmentFacilityType>();
+            if (CoursePresentationTypes == null) CoursePresentationTypes = Set<CoursePresentationType>();
+            if (DepartmentFacilityTypes == null) DepartmentFacilityTypes = Set<DepartmentFacilityType>();
+            if (OfficeBuildings == null) OfficeBuildings = Set<OfficeBuilding>();
             //RandomLookupTypes = Set<RandomLookupType>();
 
             #endregion Lookups
@@ -88,6 +89,7 @@ namespace CU.Infrastructure.Persistence
         public DbSet<CoursePresentationType> CoursePresentationTypes { get; private set; }
         public DbSet<DepartmentFacilityType> DepartmentFacilityTypes { get; private set; }
         //public DbSet<RandomLookupType> RandomLookupTypes { get; private set; }
+        public DbSet<OfficeBuilding> OfficeBuildings { get; set; }
 
         #endregion Lookups
 

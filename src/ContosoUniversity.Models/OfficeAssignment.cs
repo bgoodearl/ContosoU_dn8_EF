@@ -1,6 +1,7 @@
 ﻿//using Ardalis.GuardClauses;
+using ContosoUniversity.Models.Lookups;
+using CU.Definitions.Lookups;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ContosoUniversity.Models
 {
@@ -10,11 +11,12 @@ namespace ContosoUniversity.Models
         private OfficeAssignment()
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
-
+            OBLTId = (short)CULookupTypes.OfficeBuildingType;
         }
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public OfficeAssignment(Instructor instructor, string location)
+            : base()
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         {
             //Guard.Against.Null(instructor, nameof(instructor));
@@ -36,5 +38,9 @@ namespace ContosoUniversity.Models
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public virtual Instructor Instructor { get; set; }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+
+        public string? OfficeBuildingCode { get; set; }
+        public short? OBLTId { get; set; }
+        public virtual OfficeBuilding? Building { get; set; }
     }
 }

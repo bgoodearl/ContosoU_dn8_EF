@@ -101,6 +101,8 @@ namespace CU.Infrastructure.Persistence
                 e.HasKey(e => e.InstructorID);
                 e.ToTable("OfficeAssignment");
                 e.HasOne(oa => oa.Instructor).WithOne(i => i.OfficeAssignment).HasForeignKey<OfficeAssignment>(oa => oa.InstructorID).OnDelete(DeleteBehavior.Cascade);
+                e.HasOne(oa => oa.Building).WithMany(ob => ob.OfficeAssignments).HasForeignKey(oa => new { oa.OBLTId, oa.OfficeBuildingCode })
+                    .OnDelete(DeleteBehavior.Restrict).IsRequired(false);
             });
 
             modelBuilder.Entity<Student>(e =>
@@ -139,6 +141,7 @@ namespace CU.Infrastructure.Persistence
                     .HasValue<CoursePresentationType>((short)CULookupTypes.CoursePresentationType)
                     .HasValue<DepartmentFacilityType>((short)CULookupTypes.DepartmentFacilityType)
                     //.HasValue<RandomLookupType>((short)CULookupTypes.RandomLookupType)
+                    .HasValue<OfficeBuilding>((short)CULookupTypes.OfficeBuildingType)
                 ;
 
             });

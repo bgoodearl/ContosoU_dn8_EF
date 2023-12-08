@@ -4,6 +4,7 @@
     {
         CoursePresentationType = 1,
         DepartmentFacilityType = 2,
-        RandomLookupType = 3
+        //RandomLookupType = 3,
+        OfficeBuildingType = 4,
     };
 }
